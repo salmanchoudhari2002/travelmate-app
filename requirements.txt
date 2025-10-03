@@ -1,0 +1,11 @@
+﻿fastapi
+uvicorn[standard]
+sqlmodel
+passlib[bcrypt]
+python-jose[cryptography]
+reportlab
+openpyxl
+matplotlib
+requests
+python-dotenv
+python-multipart
