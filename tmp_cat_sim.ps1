@@ -1,0 +1,1 @@
+Get-Content -Path frontend_simulator.py -Raw | Write-Output

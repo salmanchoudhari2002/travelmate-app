@@ -9,3 +9,5 @@ matplotlib
 requests
 python-dotenv
 python-multipart
+kivy
+Pillow

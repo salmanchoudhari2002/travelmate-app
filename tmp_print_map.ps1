@@ -1,0 +1,1 @@
+Get-Content -Path .\backend\app\routes_map.py -Raw | Write-Output

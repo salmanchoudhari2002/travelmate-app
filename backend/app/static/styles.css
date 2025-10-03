@@ -1,0 +1,10 @@
+#app{display:flex; height:100vh;}
+#search-panel{width:260px; padding:8px; background:#f8f8f8; overflow:auto}
+#map{flex:1}
+#side{width:320px; padding:8px; background:#ffffff; border-left:1px solid #ddd}
+#results{margin-top:8px}
+.result{padding:6px; border-bottom:1px solid #eee; cursor:pointer}
+.result:hover{background:#eef}
+img{max-width:100%; height:auto}
+
+#map{height:100vh}

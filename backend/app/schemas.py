@@ -11,15 +11,17 @@ class Token(BaseModel):
     token_type: str = 'bearer'
 
 class TripCreate(BaseModel):
-    start_lat: Optional[float]
-    start_lng: Optional[float]
-    destination: Optional[str]
-    mode: Optional[str]
-    start_date: Optional[datetime]
-    end_date: Optional[datetime]
+    start_lat: Optional[float] = None
+    start_lng: Optional[float] = None
+    destination: Optional[str] = None
+    mode: Optional[str] = None
+    start_date: Optional[datetime] = None
+    end_date: Optional[datetime] = None
     expenses: Optional[float] = 0.0
-    purpose: Optional[str]
-    notes: Optional[str]
+    purpose: Optional[str] = None
+    notes: Optional[str] = None
+    image_url: Optional[str] = None
+    thumbnail: Optional[str] = None
 
 class TripRead(TripCreate):
     id: int
@@ -27,6 +29,8 @@ class TripRead(TripCreate):
     duration_minutes: Optional[int]
     synced: bool
     created_at: datetime
+    image_url: Optional[str] = None
+    thumbnail: Optional[str] = None
 
     class Config:
         orm_mode = True

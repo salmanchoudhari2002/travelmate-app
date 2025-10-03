@@ -16,7 +16,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'dev_secret')
 ALGORITHM = 'HS256'
 ACCESS_TOKEN_EXPIRE_MINUTES = int(os.environ.get('ACCESS_TOKEN_EXPIRE_MINUTES', '60'))
 
-pwd_context = CryptContext(schemes=['bcrypt'], deprecated='auto')
+# Use a pure-Python, widely-supported hashing scheme to avoid native bcrypt issues
+# pbkdf2_sha256 is slower but robust and doesn't require a native bcrypt backend.
+pwd_context = CryptContext(schemes=['pbkdf2_sha256'], deprecated='auto')
 router = APIRouter()
 
 def verify_password(plain, hashed):

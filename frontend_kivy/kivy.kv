@@ -1,0 +1,114 @@
+<LoginScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 16
+        spacing: 8
+        Label:
+            text: 'Travel App - Login'
+            size_hint_y: None
+            height: 40
+        TextInput:
+            id: email
+            hint_text: 'email@example.com'
+            size_hint_y: None
+            height: 40
+        TextInput:
+            id: password
+            hint_text: 'password'
+            password: True
+            size_hint_y: None
+            height: 40
+        BoxLayout:
+            size_hint_y: None
+            height: 48
+            Button:
+                text: 'Login'
+                on_release: root.login()
+            Button:
+                text: 'Signup'
+                on_release: root.signup()
+        Label:
+            id: msg
+            text: ''
+
+
+<SearchScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 8
+        size: root.size
+        BoxLayout:
+            size_hint_y: None
+            height: 40
+            TextInput:
+                id: q
+                hint_text: 'Search for places'
+            Button:
+                text: 'Search'
+                on_release: root.do_search()
+        ScrollView:
+            do_scroll_x: False
+            GridLayout:
+                id: results
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+
+
+<NewTripScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 8
+        spacing: 6
+        TextInput:
+            id: dest
+            hint_text: 'Destination'
+            size_hint_y: None
+            height: 40
+        BoxLayout:
+            size_hint_y: None
+            height: 40
+            TextInput:
+                id: mode
+                hint_text: 'Mode (Car, Train, etc)'
+            TextInput:
+                id: expenses
+                hint_text: 'Expenses'
+        TextInput:
+            id: image_url
+            hint_text: 'Image URL (auto-filled)'
+            size_hint_y: None
+            height: 40
+        Button:
+            text: 'Save Trip'
+            size_hint_y: None
+            height: 48
+            on_release: root.save_trip()
+
+
+<TripListScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: None
+            height: 48
+            Button:
+                text: 'Search Places'
+                on_release: app.root.current = 'search'
+            Button:
+                text: 'Refresh'
+                on_release: root.on_pre_enter()
+            Button:
+                text: 'Sync'
+                on_release: root.do_sync()
+        Label:
+            id: sync_msg
+            text: ''
+            size_hint_y: None
+            height: 24
+        ScrollView:
+            GridLayout:
+                id: trip_list
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height

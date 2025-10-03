@@ -21,5 +21,9 @@ class Trip(SQLModel, table=True):
     expenses: Optional[float] = 0.0
     purpose: Optional[str]
     notes: Optional[str]
+    # optional image or thumbnail URL for the place/trip
+    image_url: Optional[str] = None
+    # server-generated thumbnail (local path) for faster display
+    thumbnail: Optional[str] = None
     synced: bool = Field(default=False)
     created_at: datetime = Field(default_factory=datetime.utcnow)

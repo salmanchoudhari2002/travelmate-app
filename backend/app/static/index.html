@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Travel App Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="search-panel">
+        <input id="q" placeholder="Search for a place (e.g., Taj Mahal)" />
+        <button id="search">Search</button>
+        <div id="results"></div>
+      </div>
+      <div id="map"></div>
+      <div id="side">
+        <h3>Place Details</h3>
+        <div id="place-detail">Select a result to see details and image.</div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
